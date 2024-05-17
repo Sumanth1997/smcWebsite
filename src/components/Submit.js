@@ -6,22 +6,6 @@ import Backdrop from "@mui/material/Backdrop";
 import Fade from "@mui/material//Fade";
 import Typography from "@mui/material/Typography";
 
-async function createRecordAsync(fields){
-	await fetch("/api/air/CreateRecord", {
-		method: "POST", // *GET, POST, PUT, DELETE, etc.
-		mode: "cors", // no-cors, *cors, same-origin
-		cache: "default", // *default, no-cache, reload, force-cache, only-if-cached
-		credentials: "same-origin", // include, *same-origin, omit
-		headers: {
-		  "Content-Type": "application/json",
-		  // 'Content-Type': 'application/x-www-form-urlencoded',
-		},
-		redirect: "follow", // manual, *follow, error
-		referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-		body: JSON.stringify(fields), // body data type must match "Content-Type" header
-	  });
-}
-
 async function createRecord(fields) {
 	try {
 		const records = await base("Events").create([{ fields }]);
@@ -85,7 +69,7 @@ export default function Submit({
 			Class: courses,
 			"Event Type": eventTypeSelected,
 			Faculty: faculties,
-			Students: users,
+			// Students: users,
 			Status: "Booked ✅",
 			"Intent of Use": usageSelected,
 			"Gear Selection": gears,
@@ -94,7 +78,7 @@ export default function Submit({
 		};
 
 		if (newEvent) {
-			await createRecordAsync(fields);
+			await createRecord(fields);
 		} else if (updateEvent) {
 			await updateRecord(eventID, fields);
 		}

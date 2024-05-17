@@ -85,7 +85,8 @@ const DatePickerSection = ({ startDate, endDate, handleDateChange }) => {
 				showIcon
 				showTimeSelect
 				dateFormat="MMMM d, yyyy h:mmaa"
-				timeFormat="HH:mm"
+				// timeFormat="HH:mm"
+				timeFormat="hh:mm aa"
 				selected={startDate}
 				selectsStart
 				startDate={startDate}
@@ -98,7 +99,8 @@ const DatePickerSection = ({ startDate, endDate, handleDateChange }) => {
 				showIcon
 				showTimeSelect
 				dateFormat="MMMM d, yyyy h:mmaa"
-				timeFormat="HH:mm"
+				// timeFormat="HH:mm"
+				timeFormat="hh:mm aa"
 				selected={endDate}
 				selectsEnd
 				startDate={startDate}

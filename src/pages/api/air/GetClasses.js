@@ -23,8 +23,10 @@ export default async function handler(req, res){
 				const className = record.get("Name");
 				const classDay = record.get("Week Day(s)");
 				const classTime = record.get("Meeting Time");
+				const recid = record.get("Rec ID");
 
-                data.push({name: className, day: classDay, time: classTime});
+                // data.push({name: className, day: classDay, time: classTime});
+				data.push({id: recid, name: className, day: classDay, time: classTime});
 			});
 
 			fetchNextPage();
