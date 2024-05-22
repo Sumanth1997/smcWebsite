@@ -36,6 +36,8 @@ function FormActions({
 		setIDError(false);
 		setGoodID(false);
 
+		setUserSelected([]);
+
 		setSelectedButton("update");
 	};
 
