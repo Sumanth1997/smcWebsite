@@ -5,7 +5,6 @@ import Modal from "@mui/material/Modal";
 import Backdrop from "@mui/material/Backdrop";
 import Fade from "@mui/material//Fade";
 import Typography from "@mui/material/Typography";
-import { getServerSession } from "next-auth/next" //Added by Sumanth
 
 
 async function createRecordAsync(fields){
@@ -116,7 +115,7 @@ export default function Submit({
 		console.log(fields)
 
 		if (newEvent) {
-			// await createRecord(fields); //Sumanth Commented
+			// await createRecord(fields);
 			await createRecordAsync(fields);
 		} else if (updateEvent) {
 			// await updateRecord(eventID, fields);
